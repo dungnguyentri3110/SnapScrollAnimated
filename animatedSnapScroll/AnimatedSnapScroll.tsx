@@ -214,11 +214,11 @@ const AnimatedSnapScroll = (props: AnimatedSnapScrollProps) => {
                 event.nativeEvent.contentOffset.x / Constant.ITEM_WIDTH,
               );
             }
-            scrollView.current?.scrollTo({
-              y: 0,
-              x: index * Constant.ITEM_WIDTH,
-              animated: true,
-            });
+            // scrollView.current?.scrollTo({
+            //   y: 0,
+            //   x: index * Constant.ITEM_WIDTH,
+            //   animated: true,
+            // });
           }}
           contentContainerStyle={styles.containerScrollView}
           snapToInterval={Constant.ITEM_WIDTH}
@@ -228,7 +228,8 @@ const AnimatedSnapScroll = (props: AnimatedSnapScrollProps) => {
           decelerationRate={'fast'}
           snapToOffsets={data.map((_, index: number) => {
             return index * Constant.ITEM_WIDTH;
-          })}>
+          })}
+        >
           {data.map(renderItem)}
         </Animated.ScrollView>
 
